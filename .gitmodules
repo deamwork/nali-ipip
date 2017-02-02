@@ -1,0 +1,3 @@
+[submodule "nali-ipip"]
+	path = nali-ipip
+	url = https://github.com/dzxx36gyy/nali-ipip.git
