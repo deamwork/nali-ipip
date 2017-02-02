@@ -12,16 +12,17 @@ INSTDIR=`pwd`
 
 pushd ${INSTDIR}
 
-echo "===================\n"
-echo "Pull submodule repo\n"
-echo "===================\n"
+echo "==================="
+echo "Pull submodule repo"
+echo "==================="
 
 git submodule init nali-ipip
 git submodule update
+chmod 0765 ${INSTDIR}/nali-ipip/configure
 
-echo "======================\n"
-echo "Update submodule files\n"
-echo "======================\n"
+echo "======================"
+echo "Update submodule files"
+echo "======================"
 
 rm ${INSTDIR}/nali-ipip/share/nali.pl
 cp ${INSTDIR}/files/nali.pl ${INSTDIR}/nali-ipip/share/
@@ -30,11 +31,10 @@ ARCH=`uname -i`
 
 mkdir ${INSTDIR}/tmp
 
-echo "========================\n"
-echo "Install removeDuplicates\n"
-echo "========================\n"
-
 if [ "$ARCH" == "x86_64" ]; then
+    echo "==============================="
+    echo "Install removeDuplicates x86_64"
+    echo "==============================="
     cp ${INSTDIR}/build/removeDuplicates_amd64 ${INSTDIR}/tmp/
     mv ${INSTDIR}/tmp/removeDuplicates_amd64 ${INSTDIR}/tmp/rd
     mv ${INSTDIR}/tmp/rd /usr/local/bin/
@@ -42,15 +42,18 @@ if [ "$ARCH" == "x86_64" ]; then
     fi
 
 if [ "$ARCH" == "i386" ]; then
+    echo "============================="
+    echo "Install removeDuplicates i386"
+    echo "============================="
     cp ${INSTDIR}/build/removeDuplicates_i386 ${INSTDIR}/tmp/
     mv ${INSTDIR}/tmp/removeDuplicates_i386 ${INSTDIR}/tmp/rd
     mv ${INSTDIR}/tmp/rd /usr/local/bin/
     chmod 0555 /usr/local/bin/rd
     fi
 
-echo "=====================================\n"
-echo "Install dzxx36gyy/nali-ipip submodule\n"
-echo "=====================================\n"
+echo "====================================="
+echo "Install dzxx36gyy/nali-ipip submodule"
+echo "====================================="
 
 pushd ${INSTDIR}/nali-ipip/
 ./configure
