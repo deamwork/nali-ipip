@@ -24,8 +24,10 @@ echo "======================"
 echo "Update submodule files"
 echo "======================"
 
-rm ${INSTDIR}/nali-ipip/share/nali.pl
+rm -f ${INSTDIR}/nali-ipip/share/nali.pl
+rm -f ${INSTDIR}/nali-ipip/bin/nali-mtr
 cp ${INSTDIR}/files/nali.pl ${INSTDIR}/nali-ipip/share/
+cp ${INSTDIR}/files/nali-mtr ${INSTDIR}/nali-ipip/bin/
 
 ARCH=`uname -i`
 
