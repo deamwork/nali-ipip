@@ -13,7 +13,13 @@ The enhance of [nali-ipip](https://github.com/dzxx36gyy/nali-ipip) made by [Jaso
 How to install
 ---------
 
-Just run `./install.sh` or `bash install.sh`
+Just run `bash install.sh`
+
+
+How to uninstall
+---------
+
+`bash uninstall.sh`
 
 
 LICENSE
